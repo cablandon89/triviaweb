@@ -1,0 +1,175 @@
+/* --secondary-color: #007bff;
+  --color-facebook:#3b5998;
+  --color-instagram:#e4405f;
+  --color-linkedin:#007bb5; */
+
+@font-face {
+  font-family: 'Minecrat';
+  src: url('Minecraft.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Minecrat', serif;
+  color:white;
+}
+
+.background-animate{
+  background: linear-gradient(to right, #007bff, #007bb5)
+}
+
+.container{
+  height: 100vh ; 
+  position: relative;
+  overflow: hidden;
+  /* display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items: center; */
+}
+
+.header {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding:0 10px;
+}
+
+.frm{
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 15px;
+}
+
+.form-item{
+  display: flex;
+  flex-direction: column;
+  margin: 10px 25px 10px 25px;
+  width: 400px;
+}
+ input,select{
+   height:40px;
+   font-family: 'Minecrat', serif;
+   border-radius: 5%;
+   font-size:15px;
+ }
+
+.btn-form{
+  background-color:red;
+  padding: 10px;
+  width: 200px;
+  border-radius: 25% ;
+  color: white;
+  font-family: 'Minecrat', serif;
+  margin-top: 10px;
+  font-size:30px;
+  transition: .3s ease;
+}
+
+.btn-form:hover{
+  background-color:#d33317
+}
+
+
+
+.icon{
+  opacity: .3;
+  font-size: 100px;;
+  position: absolute;
+  bottom: -150px;
+  animation: subir 3s linear infinite ;
+}
+
+.icon:nth-child(1){
+  left: 5%;
+  animation-duration: 3s;
+  animation-delay: 3s;
+}
+
+.icon:nth-child(2){
+  font-size: 75px;
+  left: 35%;
+  animation-duration: 3s;
+  animation-delay: 5s;
+}
+
+.icon:nth-child(3){
+  font-size: 50px;
+  left: 15%;
+  animation-duration: 1.5s;
+  animation-delay: 7s;
+}
+
+.icon:nth-child(4){
+  font-size: 110px;
+  left: 90%;
+  animation-duration: 6s;
+  animation-delay: 3s;
+}
+
+.icon:nth-child(5){
+  font-size: 80px;
+  left: 65%;
+  animation-duration: 3s;
+  animation-delay: 1s;
+}
+
+.icon:nth-child(6){
+  font-size: 20px;
+  left: 50%;
+  animation-duration: 4s;
+   animation-delay: 5s;
+}
+
+
+
+
+
+#contador{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10rem;
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  border-radius:50%;
+  border: solid 2px #ccc;
+  position: relative;
+}
+
+#contador::after{
+  content: "";
+  width: 210px;
+  height: 210px;
+  border:solid 2px blue;
+  position: absolute;
+  border-radius: 50%;
+  
+}
+
+@keyframes subir{
+  0%{
+      bottom: 0;
+      opacity: 0;
+  }
+  30%{
+      transform: translateX(30px);
+  }
+  50%{
+      opacity: .4;
+  }
+  100%{
+      bottom: 100vh;
+      opacity: 0;
+  }
+}
