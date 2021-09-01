@@ -13,43 +13,19 @@
   <div class="container" id="container">
     <div class="header">
       <h1 >TriviaWeb</h1>
-      <p>High score: 0</p>
+      <p>High score: <span id="hscore"></span></p>
     </div>
     <div id="frminit">
-      <!-- <div id="pregunta">
-        <h2>Pregunta 1:</h2>
-        <h2>¿Cómo se llama su abuela?</h2>
-        <div id="contcontador"><div id="contador"></div></div> 
-        <div id="contresp">
-          <div class="respuesta">
-            Emilia
-          </div>
-          <div class="respuesta">
-            Jacinta
-          </div>
-          <div class="respuesta">
-            Amparo
-          </div>
-          <div class="respuesta">
-            Rosario
-          </div>
-        </div>
-        
-      </div> -->
       
       <form action="" class="frm">
-        <div class="form-item">
-          <label for="nombre">Ingrese su nombre:</label>
-          <input type="text" name="nombre" id="nombre" autocomplete="off">
-        </div>
         <div class="form-item" >
-          <label for="cantidad">Ingrese el número de preguntas:</label>
-          <input type="number" name="cantidad" id="cantidad" autocomplete="off" value="10" min="1" >
+          <label for="cantidad">Enter the number of questions:</label>
+          <input type="number" name="cantidad" id="cantidad" autocomplete="off" value="2" min="1" >
         </div>
         <div class="form-item">
-          <label for="categoria">Seleccione un tema</label>
+          <label for="categoria">Select a topic:</label>
           <select name="categoria" id="categoria" >
-            <option value="">Cualquiera</option>
+            <option value="">Any</option>
             <option value="9">General Knowledge</option>
             <option value="10">Entertainment: Books</option>
             <option value="11">Entertainment: Film</option>
@@ -77,28 +53,30 @@
           </select>
         </div>
         <div class="form-item">
-          <label for="difucultad">Seleccione la dificultad</label>
+          <label for="difucultad">Select the difficulty:</label>
           <select name="dificultad" id="dificultad">
-            <option value="">Cualquiera</option>
+            <option value="">Any</option>
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
             <option value="hard">Hard</option>
           </select>
         </div>
         <div class="form-item">
-          <label for="tipo">Seleccione un tipo de preguntas</label>
+          <label for="tipo">Select the type of questions:</label>
           <select name="tipo" id="tipo">
-            <option value="">Cualquiera</option>
+            <option value="">Any</option>
             <option value="multiple">Preguntas múltiples</option>
             <option value="boolean">Falso | Verdadero</option>
           </select>
         </div>
-        <button type="submit" class="btn-form" id="btn-form"><i class="fas fa-gamepad"></i> Empezar!</button>
+        <button type="submit" class="btn-form" id="btn-form"><i class="fas fa-gamepad"></i> Start!</button>
       </form>
       
     </div>
     <div class="contboton">
-      <button class="btn" id="continue">Continuar</button>
+      <div id="resultresp"></div>
+      <button class="btn dnone" id="continue">Continue</button>
+      
     </div>
     
     <div class="animacion">
