@@ -40,7 +40,7 @@ function cambio(){
 
 //Capturar el formulario y construir la URL
 async function iniciar(e){
-  e.preventDefault();
+  e.prev-entDefault();
   let dificultad = document.getElementById("dificultad").value;
   let cantidad = document.getElementById("cantidad").value;
   let tipo = document.getElementById("tipo").value;
@@ -59,13 +59,12 @@ async function fetchTrivia(){
   });
  
 }
-
-//Construir las preguntas y enviarlas al dom
+//Cons/*truir las preguntas y enviarlas al dom
 function pintarpregunta(){
   let pintar = '';
   if(intpre < obj.length){
     pintar = `<div id="pregunta">
-      <h2>Pregunta ${intpre + 1}: </h2>
+      <h2>Question ${intpre + 1}: </h2>
       <h2>${obj[intpre].question}</h2>
       <div id="contcontador"><div id="contador"></div></div> 
       <div id="contresp">`;
@@ -76,10 +75,10 @@ function pintarpregunta(){
     pintar += `</div>`
     
   }else{
-    pintar = `<h2>Juego terminado, su puntaje es ${score} </h2>`;
+    pintar = `<h2>The game is over, your score is ${score} </h2>`;
     //guardar puntaje máximo en localstorage
     if(score > scores){
-      pintar += `<h2>Nuevo puntaje máximo <i class="fas fa-smile-wink"></i></h2>`;
+      pintar += `<h2>New <i class="fas fa-smile-wink"></i></h2>`;
       localStorage.setItem('scores', score);
       setScore();
     }
@@ -128,7 +127,8 @@ function resolver(btn = null){
     terminado = true;
     if(btn == null){
       console.log('Se acabo el tiempo');
-
+      resultresp.classList.add('respuesta_mala');
+      resultresp.innerText = "Time out, the answer is: "+ obj[intpre].correct_answer;
     }else{
       if(btn.innerText == obj[intpre].correct_answer){
         btn.classList.add('respuesta_buena');
@@ -136,7 +136,6 @@ function resolver(btn = null){
         resultresp.innerText = "Correct answer";
         score ++;
       }else{
-
         btn.classList.add('respuesta_mala');
         resultresp.classList.add('respuesta_mala');
         resultresp.innerText = "Wrong answer, the answer is: "+ obj[intpre].correct_answer;
