@@ -40,7 +40,7 @@ function cambio(){
 
 //Capturar el formulario y construir la URL
 async function iniciar(e){
-  e.prev-entDefault();
+  e.preventDefault();
   let dificultad = document.getElementById("dificultad").value;
   let cantidad = document.getElementById("cantidad").value;
   let tipo = document.getElementById("tipo").value;
